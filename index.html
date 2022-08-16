@@ -11,6 +11,12 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <!-- sweetalert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script> 
+    <!-- toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+    <link rel="shortcut icon" href="./assets/img/lentes.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css" />
     
   </head>
@@ -53,8 +59,8 @@
       </div>
   </header>
     <div class="container">
-      <div id="lista-productos">
-        
+      <div id="lista-productos" class="productos">
+      </div> 
     </div>
     <a href="">
       <div class="container">
@@ -85,7 +91,7 @@
               <button
                 type="button"
                 class="btn btn-outline-success"
-                id="vaciar-carrito"
+                id="confirmar-compra"
               >
                 Confirmar Compra
               </button>

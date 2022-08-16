@@ -9,4 +9,12 @@
 }
 .card {
     margin: 1rem;
+    max-width: 20rem;
+}
+.swal2-styled.swal2-confirm {
+    background-color: #303030 !important;
+    box-shadow: none !important;
+}
+.productos {
+    display: flex;
 }
