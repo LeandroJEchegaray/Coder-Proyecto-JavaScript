@@ -3,6 +3,7 @@ const carrito = document.querySelector("#carrito");
 const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const listaProductos = document.querySelector("#lista-productos");
+const listaProductos2 = document.querySelector("#seccion-card");
 const total = document.querySelector(".cart-total");
 
 const confimarCompraBtn = document.querySelector("#confirmar-compra");
@@ -58,6 +59,7 @@ cargarEventListeners();
 
 function cargarEventListeners() {
   listaProductos.addEventListener("click", agregarProducto);
+  listaProductos2.addEventListener("click", agregarProducto);
   carrito.addEventListener("click", eliminarProducto);
   vaciarCarritoBtn.addEventListener("click", () => {
       
@@ -214,3 +216,28 @@ function limpiarHTML() {
   contenedorCarrito.innerHTML = "";
   total.textContent = articulosCarrito.length;
 }
+
+ const buscarUnProducto = () => {
+   fetch('https://api.mercadolibre.com/sites/MLA/search?q=lentes_rusty')
+   .then((response) => response.json())
+   .then(informacion=> {
+     let acumulador = ``;
+     informacion.results.forEach((producto) => {
+       console.log(producto);
+       acumulador += `
+       <div class="card">
+      <div>
+      <img class="img" src="${producto.thumbnail}" alt="">
+      </div>
+      <span class="price-tag"><span>$</span>${producto.price}</span>
+      
+      <p class ="card-title">${producto.title}</p>
+      <a href="" class="btn agregar-carrito" id="${producto.id}">Comprar</a>
+      </div>
+       `;
+       document.getElementById('seccion-card').innerHTML = acumulador;
+     })
+   })
+   cargarEventListeners()
+ };
+ buscarUnProducto();

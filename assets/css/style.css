@@ -18,3 +18,7 @@
 .productos {
     display: flex;
 }
+.seccion-card {
+    display: flex;
+    flex-wrap: wrap;
+}
